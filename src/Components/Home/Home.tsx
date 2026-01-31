@@ -1,45 +1,33 @@
 import React from 'react';
-import { Page } from '../../Interfaces/Pages';
+import { useRouter } from 'next/router';
 import Button from '../Button/Button';
 import { List, ListItem } from './Components';
 
-interface iProps {
-    setActivePage: (page: Page) => void;
-    children?: any;
-}
-
-const Home = (props: iProps) => {
-    const { setActivePage } = props;
+const Home = () => {
+    const router = useRouter();
 
     return (
         <List>
             <ListItem>
-                <Button onClick={() => setActivePage(Page.List)}>
+                <Button onClick={() => router.push('/lista-imena')}>
                     Lista imena
                 </Button>
             </ListItem>
             <ListItem>
-                <Button onClick={() => setActivePage(Page.About)}>
+                <Button onClick={() => router.push('/o-imenima')}>
                     O Imenima
                 </Button>
             </ListItem>
             <ListItem>
-                <Button onClick={() => setActivePage(Page.Learn)}>
+                <Button onClick={() => router.push('/nauci-imena')}>
                     Nauci imena
                 </Button>
             </ListItem>
             <ListItem>
-                <Button onClick={() => setActivePage(Page.Test)}>
+                <Button onClick={() => router.push('/testiraj-se')}>
                     Testiraj se
                 </Button>
             </ListItem>
-            {/* 
-                <ListItem>
-                    <Button onClick={() => setActivePage(Page.Other)}>
-                        O stranici
-                    </Button>
-                </ListItem> 
-            */}
         </List>
     );
 };
