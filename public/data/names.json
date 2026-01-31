@@ -1,0 +1,598 @@
+{
+    "names": [
+        {
+            "id": 1,
+            "translation": "Onaj, osim koga drugog Boga nema",
+            "transcription": "Allah",
+            "arabic": "الله"
+        },
+        {
+            "id": 2,
+            "translation": "Milostivi",
+            "transcription": "Er-Rahmān",
+            "arabic": "الرّحمان"
+        },
+        {
+            "id": 3,
+            "translation": "Samilosni",
+            "transcription": "Er-Rahīm",
+            "arabic": "الرّحيم"
+        },
+        {
+            "id": 4,
+            "translation": "Vladar",
+            "transcription": "El-Melik",
+            "arabic": "المَلِك"
+        },
+        {
+            "id": 5,
+            "translation": "Sveti",
+            "transcription": "El-Kuddūs",
+            "arabic": "القُدّوس"
+        },
+        {
+            "id": 6,
+            "translation": "Od nedostataka čistī",
+            "transcription": "Es-Selām",
+            "arabic": "السّلام"
+        },
+        {
+            "id": 7,
+            "translation": "Koji potvrđuje obećanje i daje sigurnost",
+            "transcription": "El-Mu'min",
+            "arabic": "المُؤمن"
+        },
+        {
+            "id": 8,
+            "translation": "Koji sve čuva i nadgleda",
+            "transcription": "El-Muhejmin",
+            "arabic": "المُهَيْمِن"
+        },
+        {
+            "id": 9,
+            "translation": "Snažni",
+            "transcription": "El-Azīz",
+            "arabic": "العزيز"
+        },
+        {
+            "id": 10,
+            "translation": "Onaj kome se ništa ne može oduprijeti",
+            "transcription": "El-Džebbār",
+            "arabic": "الجبّار"
+        },
+        {
+            "id": 11,
+            "translation": "Gordi, Beskrajno Veliki",
+            "transcription": "El-Mutekebbir",
+            "arabic": "المُتَكَبِّر"
+        },
+        {
+            "id": 12,
+            "translation": "Stvoritelj",
+            "transcription": "El-Halik",
+            "arabic": "الخالق"
+        },
+        {
+            "id": 13,
+            "translation": "Koji divno stvara",
+            "transcription": "El-Bāri'",
+            "arabic": "البارئ"
+        },
+        {
+            "id": 14,
+            "translation": "Onaj koji daje najljepše oblike",
+            "transcription": "El-Musavvir",
+            "arabic": "المُصَوِّر"
+        },
+        {
+            "id": 15,
+            "translation": "Koji mnogo prašta",
+            "transcription": "El-Gaffār",
+            "arabic": "الغفّار"
+        },
+        {
+            "id": 16,
+            "translation": "Pokoritelj - Nepobjedivi",
+            "transcription": "El-Kahhār",
+            "arabic": "القهّار"
+        },
+        {
+            "id": 17,
+            "translation": "Onaj koji mnogo poklanja",
+            "transcription": "El-Vehhāb",
+            "arabic": "الوهّاب"
+        },
+        {
+            "id": 18,
+            "translation": "Koji obilno nafaku daje",
+            "transcription": "Er-Rezzāk",
+            "arabic": "الرزّاق"
+        },
+        {
+            "id": 19,
+            "translation": "Onaj koji rješava sve vrste teškoća i problema",
+            "transcription": "El-Fettāh",
+            "arabic": "الفتّاح"
+        },
+        {
+            "id": 20,
+            "translation": "Onaj čije je znanje beskrajno",
+            "transcription": "El-Alīm",
+            "arabic": "العليم"
+        },
+        {
+            "id": 21,
+            "translation": "Koji usteže i uzima",
+            "transcription": "El-Kābid",
+            "arabic": "القابض"
+        },
+        {
+            "id": 22,
+            "translation": "Koji pruža i daje",
+            "transcription": "El-Basīt",
+            "arabic": "الباسط"
+        },
+        {
+            "id": 23,
+            "translation": "Onaj koji ponižava",
+            "transcription": "El-Hāfid",
+            "arabic": "الخافض"
+        },
+        {
+            "id": 24,
+            "translation": "Onaj koji uzdiže",
+            "transcription": "Er-Rāfia",
+            "arabic": "الرّافع"
+        },
+        {
+            "id": 25,
+            "translation": "Onaj koji daje ponos i snagu kome hoće",
+            "transcription": "El-Mu'izz",
+            "arabic": "المُعِزّ"
+        },
+        {
+            "id": 26,
+            "translation": "Onaj kojeg njegovi robovi veličaju zbog njegove uzvišenosti",
+            "transcription": "El-Medžid",
+            "arabic": "المَجِيد"
+        },
+        {
+            "id": 27,
+            "translation": "Gospodar svih gospodara",
+            "transcription": "Er-Rabb",
+            "arabic": "الرب"
+        },
+        {
+            "id": 28,
+            "translation": "Onaj koji je bićem, imenima, svojstvima, vlašću i upravom uzvišen i veličanstven",
+            "transcription": "El-'Azim",
+            "arabic": "العظيم"
+        },
+        {
+            "id": 29,
+            "translation": "Onaj čije znanje, vlast i uprava sve obuhvataju",
+            "transcription": "El-Vasi'u",
+            "arabic": "الواسع"
+        },
+        {
+            "id": 30,
+            "translation": "Plemeniti",
+            "transcription": "El-Kerim",
+            "arabic": "الكَرِيم"
+        },
+        {
+            "id": 31,
+            "translation": "Onaj koji je sve obuhvatio svojim blagodatima",
+            "transcription": "El-Ekrem",
+            "arabic": "`الاكرم"
+        },
+        {
+            "id": 32,
+            "translation": "Onaj koji voli njemu pokornog",
+            "transcription": "El-Vedud",
+            "arabic": "الودود"
+        },
+        {
+            "id": 33,
+            "translation": "Onaj koji sve čuva i pazi",
+            "transcription": "El-Mukit",
+            "arabic": "المقيت"
+        },
+        {
+            "id": 34,
+            "translation": "Onaj koji umnogostručava dobra djela",
+            "transcription": "Eš-Šekur",
+            "arabic": "الشكور"
+        },
+        {
+            "id": 35,
+            "translation": "Onaj kojem nista nije skriveno",
+            "transcription": "El-Latif",
+            "arabic": "اللّطيف"
+        },
+        {
+            "id": 36,
+            "translation": "Blagi, Pažljivi",
+            "transcription": "El-Halim",
+            "arabic": "الحليم"
+        },
+        {
+            "id": 37,
+            "translation": "Svevišnji, Najuzvišeniji",
+            "transcription": "El-'Alī",
+            "arabic": "العليّ"
+        },
+        {
+            "id": 38,
+            "translation": "Onaj koji obračun svodi",
+            "transcription": "El-Hasib",
+            "arabic": "الحسيب"
+        },
+        {
+            "id": 39,
+            "translation": "Onaj koji pazi i motri na svaku kretnju",
+            "transcription": "Er-Rakib",
+            "arabic": "الرّقيب"
+        },
+        {
+            "id": 40,
+            "translation": "Sudija",
+            "transcription": "El-Hakem",
+            "arabic": "الحكم"
+        },
+        {
+            "id": 41,
+            "translation": "Koji u potpunosti sve zna",
+            "transcription": "El-Habir",
+            "arabic": "الخبير"
+        },
+        {
+            "id": 42,
+            "translation": "Onaj koji je puno zahvalan",
+            "transcription": "Eš-Šekur",
+            "arabic": "الشّكور"
+        },
+        {
+            "id": 43,
+            "translation": "Onaj koji se odaziva",
+            "transcription": "El-Mudžib",
+            "arabic": "المجيب"
+        },
+        {
+            "id": 44,
+            "translation": "Kadija, Vladar, Potčinitelj",
+            "transcription": "Ed-Dejja'n",
+            "arabic": "الدّيّان"
+        },
+        {
+            "id": 45,
+            "translation": "Onaj koji oživljava",
+            "transcription": "El-Bais",
+            "arabic": "الباعث"
+        },
+        {
+            "id": 46,
+            "translation": "Onaj koji svjedoči svemu",
+            "transcription": "Eš-Šehid",
+            "arabic": "الشّهيد"
+        },
+        {
+            "id": 47,
+            "translation": "Istiniti",
+            "transcription": "El-Hakk",
+            "arabic": "الحق"
+        },
+        {
+            "id": 48,
+            "translation": "Staratelj, Povjerenik",
+            "transcription": "El-Vekil",
+            "arabic": "الوكيل"
+        },
+        {
+            "id": 49,
+            "translation": "Moćni",
+            "transcription": "El-Kavij",
+            "arabic": "القوي"
+        },
+        {
+            "id": 50,
+            "translation": "Čvrsti, postojani",
+            "transcription": "El-Metin",
+            "arabic": "المتين"
+        },
+        {
+            "id": 51,
+            "translation": "Zaštitnik",
+            "transcription": "El-Velīj",
+            "arabic": "الوليّ"
+        },
+        {
+            "id": 52,
+            "translation": "Hvaljeni",
+            "transcription": "El-Hamīd",
+            "arabic": "الحميد"
+        },
+        {
+            "id": 53,
+            "translation": "Onaj koji život daje",
+            "transcription": "El-Muhiji",
+            "arabic": "المحيي"
+        },
+        {
+            "id": 54,
+            "translation": "Onaj koji usmrćuje",
+            "transcription": "El-Mumīt",
+            "arabic": "المُميت"
+        },
+        {
+            "id": 55,
+            "translation": "Živi",
+            "transcription": "El-Hajj",
+            "arabic": "الحيّ"
+        },
+        {
+            "id": 56,
+            "translation": "Onaj koji sve obuhvata i svemu broj zna",
+            "transcription": "El-Muhsīj",
+            "arabic": "المُحصي"
+        },
+        {
+            "id": 57,
+            "translation": "Koji iz početka stvara",
+            "transcription": "El-Mubdij",
+            "arabic": " المُبدئ"
+        },
+        {
+            "id": 58,
+            "translation": "Onaj koji nakon smrti daje novo postojanje",
+            "transcription": "El-Mu'id",
+            "arabic": "المعير"
+        },
+        {
+            "id": 59,
+            "translation": "Koji sve održava",
+            "transcription": "El-Kajjūm",
+            "arabic": "القيّوم"
+        },
+        {
+            "id": 60,
+            "translation": "Jedini",
+            "transcription": "El-Vāhid",
+            "arabic": "الواحد"
+        },
+        {
+            "id": 61,
+            "translation": "Onaj kome se svako obraća, u koga se svako pouzda",
+            "transcription": "Es-Samed",
+            "arabic": "الصّمد"
+        },
+        {
+            "id": 62,
+            "translation": "Svemoćni",
+            "transcription": "El-Kādir",
+            "arabic": "القادر"
+        },
+        {
+            "id": 63,
+            "translation": "Onaj kome pripada apsolutna moć",
+            "transcription": "El-Muktedir",
+            "arabic": "المُقتدر"
+        },
+        {
+            "id": 64,
+            "translation": "Onaj koji unapređuje",
+            "transcription": "El-Mukaddim",
+            "arabic": "المُقدِم"
+        },
+        {
+            "id": 65,
+            "translation": "Onaj koji ostaje nakon što svi nestanu",
+            "transcription": "El-Varis",
+            "arabic": "الوارث"
+        },
+        {
+            "id": 66,
+            "translation": "Onaj koji prima pokajanje",
+            "transcription": "Et-Tevvab",
+            "arabic": "التّواب"
+        },
+        {
+            "id": 67,
+            "translation": "Onaj koji sve čuje",
+            "transcription": "Es-Semī'a",
+            "arabic": "السّميع"
+        },
+        {
+            "id": 68,
+            "translation": "Koji puno prašta",
+            "transcription": "El-Gafur",
+            "arabic": "الغفور"
+        },
+        {
+            "id": 69,
+            "translation": "Veličanstveni",
+            "transcription": "El-Dželil",
+            "arabic": "الجليل"
+        },
+        {
+            "id": 70,
+            "translation": "Onaj koji čuva",
+            "transcription": "El-Hafiz",
+            "arabic": "الحفيظ"
+        },
+        {
+            "id": 71,
+            "translation": "Mudri",
+            "transcription": "El-Hakim",
+            "arabic": "الحكيم"
+        },
+        {
+            "id": 72,
+            "translation": "Onaj koji je stvorio stvorenja",
+            "transcription": "El-Halak",
+            "arabic": "الخلاق"
+        },
+        {
+            "id": 73,
+            "translation": "Jedan jedini potpun i savršen",
+            "transcription": "El-Ehad",
+            "arabic": "الاحد"
+        },
+        {
+            "id": 74,
+            "translation": "Onaj koji posjeduje blagost",
+            "transcription": "Er-Rauf",
+            "arabic": "الرووف"
+        },
+        {
+            "id": 75,
+            "translation": "Onaj bez kojeg ništa ne može postojati",
+            "transcription": "El-Batin",
+            "arabic": "الباطن"
+        },
+        {
+            "id": 76,
+            "translation": "Onaj prije koga nije bilo ništa, Prvi",
+            "transcription": "El-Evvel",
+            "arabic": "الأوّل"
+        },
+        {
+            "id": 77,
+            "translation": "Onaj koji je svemu što je lijepo dao ljepotu",
+            "transcription": "El-Džemil",
+            "arabic": "الجميل"
+        },
+        {
+            "id": 78,
+            "translation": "Onaj koji vodi brigu o robovima i dobro im čini",
+            "transcription": "El-Berru",
+            "arabic": "البُر"
+        },
+        {
+            "id": 79,
+            "translation": "Onaj koji je uzdignut i uzvišen",
+            "transcription": "El-Alijju",
+            "arabic": "العلي"
+        },
+        {
+            "id": 80,
+            "translation": "Najsilniji",
+            "transcription": "El-E'azzu",
+            "arabic": "الاعز"
+        },
+        {
+            "id": 81,
+            "translation": "Bog",
+            "transcription": "El-Ilah",
+            "arabic": "الاله"
+        },
+        {
+            "id": 82,
+            "translation": "Svevideći",
+            "transcription": "El-Besir",
+            "arabic": " البصير"
+        },
+        {
+            "id": 83,
+            "translation": "Najplemenitiji",
+            "transcription": "El-Dževad",
+            "arabic": "الجواد"
+        },
+        {
+            "id": 84,
+            "translation": "Neovisni",
+            "transcription": "El-Ganījj",
+            "arabic": "الغنيّ"
+        },
+        {
+            "id": 85,
+            "translation": "Onaj koji je blizu",
+            "transcription": "El-Karib",
+            "arabic": "القريب"
+        },
+        {
+            "id": 86,
+            "translation": "Onak koji ima razumijevanja za robove",
+            "transcription": "Er-Rafik",
+            "arabic": "الرفيق"
+        },
+        {
+            "id": 87,
+            "translation": "Koji je uzvišen od svake manjkavosti",
+            "transcription": "Es-subuhu",
+            "arabic": "السبوح"
+        },
+        {
+            "id": 88,
+            "translation": "Onaj koji prikriva grijehe i mane svojih robova",
+            "transcription": "Es-Sitiru",
+            "arabic": "الستير"
+        },
+        {
+            "id": 89,
+            "translation": "Gospodar koji sve posjeduje i kome se svi obraćaju",
+            "transcription": "Es-Sejid",
+            "arabic": "السيّد"
+        },
+        {
+            "id": 90,
+            "translation": "Onaj koji liječi svoje robove od svih vrsta bolesti",
+            "transcription": "Eš-Šafi",
+            "arabic": "الشافي"
+        },
+        {
+            "id": 91,
+            "translation": "Onaj koji iz svoje zahvalnosti nagrađuje svoje robove",
+            "transcription": "Eš-Šakiru",
+            "arabic": "الشاكر"
+        },
+        {
+            "id": 92,
+            "translation": "Onaj koji je čist, lijep i uzvišen od bilo kakve manjkavosti",
+            "transcription": "Et-tajjibu",
+            "arabic": "الطيّب"
+        },
+        {
+            "id": 93,
+            "translation": "Onaj koji je iznad svega svega, iznad koga niko nije",
+            "transcription": "Ez-Zahiru",
+            "arabic": "الظاهر"
+        },
+        {
+            "id": 94,
+            "translation": "Onaj koji obilno daje",
+            "transcription": "El-Mennanu",
+            "arabic": "المنان"
+        },
+        {
+            "id": 95,
+            "translation": "Onaj koji štiti i pomaže svoje robove",
+            "transcription": "El-Mevlaa'",
+            "arabic": "المولى"
+        },
+        {
+            "id": 96,
+            "translation": "Onaj koji upućuje svoje robove ka spoznaji svoga gospodara",
+            "transcription": "El-Hadi",
+            "arabic": "الهادي"
+        },
+        {
+            "id": 97,
+            "translation": "Onaj koji pomaže svoje robove",
+            "transcription": "En-Nasir",
+            "arabic": "النصير"
+        },
+        {
+            "id": 98,
+            "translation": "Onaj koji sve obuhvata svojim znanjem i moći i čijom se voljom dešava sve u kosmosu",
+            "transcription": "El-Muhit",
+            "arabic": "المحيط"
+        },
+        {
+            "id": 99,
+            "translation": "Onaj koji svojim robovima objašnjava puteve istine i kako da zasluže nagradu",
+            "transcription": "El-Mubin",
+            "arabic": "المبين"
+        }
+    ]
+}
