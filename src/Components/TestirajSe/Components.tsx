@@ -2,62 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 import { Ime as iIme } from '../../Interfaces/Ime';
 import { Ime } from '../ListaImena/Components';
+import Button from '../Button/Button';
 
 export const TestirajSe = styled.div`
     display: flex;
     flex-direction: column;
-    .selectovi {
-        display: flex;
-        flex-wrap: nowrap;
-        > .form-group {
-            width: 90%;
-            margin-inline: 5%;
-            > * {
-                width: 100%;
-            }
-        }
-    }
     button.paper-btn.btn-block.paper-btn {
         margin-bottom: 1rem !important;
     }
 `;
 
+export const shuffle = (array: iIme[]) => {
+    const a = [...array];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+};
+
 interface iTestniModul {
     pitanja: iIme[];
     sviOdgovori: iIme[];
-    tacniOdgovori: { current: iIme[] };
-    netacniOdgovori: { current: iIme[] };
 }
 
 export const TestniModul = (props: iTestniModul) => {
-    const { pitanja, sviOdgovori, tacniOdgovori, netacniOdgovori } = props;
-
-    const [localPitanja, setLocalPitanja] = React.useState([...pitanja]);
-
-    const [pitanje, setPitanje] = React.useState<iIme | null>(null);
-    const [odgovori, setOdgovori] = React.useState<iIme[]>([]);
-
-    const [showModal, setShowModal] = React.useState(false);
-    const modalData = React.useRef<[iIme, iIme] | null>(null);
-
-    React.useEffect(() => {
-        handleNextQuestion(true);
-    }, []);
+    const { pitanja, sviOdgovori } = props;
 
     const random = (od: number) => Math.floor(Math.random() * od);
-
-    const shuffleArray = (array: iIme[]) => {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    };
 
     const getOdgovore = (pitanje: iIme) => {
         const odgovori = [...sviOdgovori].filter((p) => p.id !== pitanje?.id);
 
-        return shuffleArray(
+        return shuffle(
             [
                 pitanje,
                 odgovori.splice(random(odgovori.length), 1)[0],
@@ -67,26 +44,37 @@ export const TestniModul = (props: iTestniModul) => {
         );
     };
 
+    // first question is set up here rather than in a mount effect, so the
+    // component never renders an empty frame before the quiz starts
+    const [localPitanja, setLocalPitanja] = React.useState(() =>
+        pitanja.slice(1)
+    );
+    const [pitanje, setPitanje] = React.useState<iIme | null>(
+        pitanja[0] ?? null
+    );
+    const [odgovori, setOdgovori] = React.useState<iIme[]>(() =>
+        pitanja[0] ? getOdgovore(pitanja[0]) : []
+    );
+
+    const [tacniOdgovori, setTacniOdgovori] = React.useState<iIme[]>([]);
+    const [netacniOdgovori, setNetacniOdgovori] = React.useState<iIme[]>([]);
+
+    // [pitanje, odgovor] of the answer being shown; null = modal closed
+    const [modalData, setModalData] = React.useState<[iIme, iIme] | null>(null);
+
     const handleOdgovor = (odgovor: iIme) => {
-        if (pitanje?.id === odgovor.id) {
-            tacniOdgovori.current.push(pitanje as iIme);
-        } else {
-            netacniOdgovori.current.push(pitanje as iIme);
-        }
-        modalData.current = [pitanje as iIme, odgovor];
-        setShowModal(true);
-        // handleNextQuestion();
+        const tacno = pitanje?.id === odgovor.id;
+        const setter = tacno ? setTacniOdgovori : setNetacniOdgovori;
+        setter((prev) => [...prev, pitanje as iIme]);
+        setModalData([pitanje as iIme, odgovor]);
     };
 
-    const handleNextQuestion = (init = false) => {
-        const tempPitanje = localPitanja.splice(0, 1)[0];
-        setPitanje(tempPitanje);
-        setOdgovori(getOdgovore(tempPitanje));
-        setLocalPitanja([...localPitanja]);
-
-        if (!init) {
-            setShowModal(!showModal);
-        }
+    const handleNextQuestion = () => {
+        const [next, ...rest] = localPitanja;
+        setPitanje(next ?? null);
+        setOdgovori(next ? getOdgovore(next) : []);
+        setLocalPitanja(rest);
+        setModalData(null);
     };
 
     if (!pitanje) {
@@ -95,26 +83,26 @@ export const TestniModul = (props: iTestniModul) => {
                 <_TestniModul>
                     <h4>
                         Odgovorili ste{' '}
-                        {!netacniOdgovori.current.length
+                        {!netacniOdgovori.length
                             ? 'sva '
-                            : tacniOdgovori.current.length}{' '}
+                            : tacniOdgovori.length}{' '}
                         pitanja tacno
                     </h4>
                     <ul>
-                        {tacniOdgovori.current.map((pitanje) => (
+                        {tacniOdgovori.map((pitanje) => (
                             <li key={pitanje.id}>
                                 <Ime {...pitanje} />
                             </li>
                         ))}
                     </ul>
-                    {netacniOdgovori.current.length > 0 ? (
+                    {netacniOdgovori.length > 0 ? (
                         <>
                             <h4>
-                                Odgovorili ste {netacniOdgovori.current.length}{' '}
-                                pitanja netacno
+                                Odgovorili ste {netacniOdgovori.length} pitanja
+                                netacno
                             </h4>
                             <ul>
-                                {netacniOdgovori.current.map((pitanje) => (
+                                {netacniOdgovori.map((pitanje) => (
                                     <li key={pitanje.id}>
                                         <Ime {...pitanje} isOpen />
                                     </li>
@@ -150,46 +138,50 @@ export const TestniModul = (props: iTestniModul) => {
                 className="modal-state"
                 id="answerModal"
                 type="checkbox"
-                checked={showModal}
+                checked={modalData !== null}
                 onChange={() => handleNextQuestion()}
             />
 
-            {modalData.current && (
-                <div className="modal">
+            {modalData && (
+                <div
+                    className="modal"
+                    onKeyDown={(e) =>
+                        e.key === 'Escape' && handleNextQuestion()
+                    }
+                >
                     <label className="modal-bg" htmlFor="answerModal"></label>
                     <div className="modal-body">
                         <h4 className="modal-title">
-                            {modalData.current[0].id === modalData.current[1].id
+                            {modalData[0].id === modalData[1].id
                                 ? 'Tacan'
                                 : 'Netacan'}{' '}
                             odgovor
                         </h4>
                         <Ime
-                            {...modalData.current[0]}
+                            {...modalData[0]}
                             isOpen
-                            showCheckbox={
-                                modalData.current[0].id ===
-                                modalData.current[1].id
-                            }
-                            key={'tacno-' + modalData.current[0].id}
+                            showCheckbox={modalData[0].id === modalData[1].id}
+                            key={'tacno-' + modalData[0].id}
                         />
-                        {modalData.current[0].id !==
-                            modalData.current[1].id && (
+                        {modalData[0].id !== modalData[1].id && (
                             <>
                                 <p>Vas odgovor</p>
                                 <Ime
-                                    {...modalData.current[1]}
+                                    {...modalData[1]}
                                     isOpen
-                                    key={'pogresno-' + modalData.current[0].id}
+                                    key={'pogresno-' + modalData[0].id}
                                 />
                             </>
                         )}
-                        <label
-                            htmlFor="answerModal"
-                            className="paper-btn btn-block btn-success"
+                        {/* a real button, so it is focusable and Enter works;
+                            autoFocus lands the keyboard here as the modal opens */}
+                        <Button
+                            className="btn-block btn-success dalje"
+                            onClick={() => handleNextQuestion()}
+                            autoFocus
                         >
                             Dalje
-                        </label>
+                        </Button>
                     </div>
                 </div>
             )}
@@ -200,6 +192,10 @@ export const TestniModul = (props: iTestniModul) => {
 const _TestniModul = styled.div`
     display: flex;
     flex-direction: column;
+    /* papercss gives every ul li a "-" marker; the result rows are cards */
+    ul li::before {
+        content: '';
+    }
     .odgovori {
         display: flex;
         flex-direction: column;
@@ -214,7 +210,7 @@ const _TestniModul = styled.div`
     .modal-body {
         min-width: max(50vw, min(600px, 90vw));
     }
-    modal-body > label[for='answerModal'] {
+    .modal-body > .dalje {
         margin-top: 1rem;
         font-weight: bold;
         background-color: var(--main-background, #fff);

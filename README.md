@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# 99 Allahovih lijepih imena
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small offline-friendly app for learning the 99 names — browse them, read the
+background, practise a slice at a time, and test yourself. Bosnian UI.
 
-## Available Scripts
+Next.js (pages router) exported to static HTML, styled with
+[PaperCSS](https://getpapercss.com/) plus styled-components. Mobile is the
+primary target size. No backend: the 99 names ship as JSON and your progress
+lives in `localStorage`.
 
-In the project directory, you can run:
+## Scripts
 
-### `npm start`
+| Command             | What it does                               |
+| ------------------- | ------------------------------------------ |
+| `npm run dev`       | Dev server on http://localhost:3000        |
+| `npm run build`     | Static export into `out/`                  |
+| `npm test`          | Unit tests (`node --test`, no framework)   |
+| `npm run lint`      | ESLint (flat config, `eslint-config-next`) |
+| `npm run typecheck` | `tsc --noEmit`                             |
+| `npm run format`    | Prettier over `src`                        |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deploying
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm run build` writes a fully static `out/` — drop it on any static host. There
+is no server, so a plain file server works, as long as it maps `/lista-imena`
+to `lista-imena.html` (most hosts do this by default).
 
-### `npm test`
+## Layout
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+  pages/           routes; each one is a thin wrapper around a component
+  Components/
+    Layout.tsx     back button + per-route title, wraps every page
+    Selects.tsx    the "how many / which names" dropdowns, shared by
+                   nauci-imena and testiraj-se, with their localStorage state
+    ranges.ts      splits 99 names into pages  (unit tested)
+    learned.ts     the learned-names map, parsed once and cached
+    ListaImena/    the collapsible name row, reused everywhere a name appears
+    TestirajSe/    quiz flow and the answer modal
+  data/names.json  the 99 names
+```
 
-### `npm run build`
+## Notes for future changes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **PaperCSS hides form controls with `display: none`.** That drops them out of
+  the tab order. The collapsible toggle and the learn tick are deliberately
+  clipped instead of hidden so they stay keyboard-reachable — see `srOnly` in
+  `ListaImena/Components.tsx`. Don't "simplify" that back to `display: none`.
+- **Headings.** PaperCSS pins `h1` at a fixed 80px, which eats two thirds of a
+  phone screen. `Title.tsx` overrides it with `clamp()`.
+- **The name row is shared.** `ListaImena/Components.tsx` renders the row on the
+  list, the practice screen, the quiz modal and the results — `showCheckbox` and
+  `isOpen` are the only knobs. Changing it affects all four.
+- **Check a phone size before shipping layout changes.** 375x667 is the tight
+  case; the title, the back button and the answer modal all had to be tuned for
+  it. Browser devtools device mode is enough.

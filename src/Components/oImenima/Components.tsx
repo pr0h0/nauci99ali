@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
-
 export const Text = styled.h5`
     .pre {
         color: #41403e;
@@ -17,7 +15,7 @@ export const Text = styled.h5`
         line-height: 1.5;
         overflow-x: auto;
         padding: 1em;
-        word-break: break-work;
+        word-break: break-word;
         word-wrap: break-word;
 
         font-family: monospace, monospace;

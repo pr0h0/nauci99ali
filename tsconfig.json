@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2017",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
@@ -12,11 +12,12 @@
         "module": "esnext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
+        "allowImportingTsExtensions": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
         "incremental": true
     },
-    "include": ["src"],
+    "include": ["next-env.d.ts", "src"],
     "exclude": ["node_modules"]
 }

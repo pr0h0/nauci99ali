@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, Wrapper } from './Components';
+import { Text } from './Components';
 
 const OImenima = () => {
     return (
-        <Wrapper>
+        <>
             <Text>
                 Vlastito Božije ime je <b>Allah</b>. Ono označava Stvoritelja
                 svega što postoji. Ono je u Kur&apos;anu spomenuto <b>2698</b>{' '}
@@ -51,7 +51,7 @@ const OImenima = () => {
                     </li>
                 </ul>
             </Text>
-        </Wrapper>
+        </>
     );
 };
 export default OImenima;

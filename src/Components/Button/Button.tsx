@@ -1,24 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface iProps {
-    onClick?: (arg?: any) => void;
-    children?: JSX.Element | JSX.Element[] | string;
-    [key: string]: any;
-}
-const Button = (props: iProps) => {
-    const { onClick, children, ...rest } = props;
-    return (
-        <_Button {...rest} onClick={onClick}>
-            {children}
-        </_Button>
-    );
-};
+const Button = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+    <_Button {...props} />
+);
 
 export default Button;
 
 const _Button = styled.button.attrs({
-    className: 'paper-btn',
+    // ponytail: `as string` stops attrs narrowing className to a literal type
+    className: 'paper-btn' as string,
 })`
     text-align: center;
 `;

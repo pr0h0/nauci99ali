@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 interface iProps {
-    onClick: (arg?: any) => void;
+    onClick: () => void;
     show: boolean;
 }
 

@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Wrapper from './Wrapper/Wrapper';
 import BackButton from './Button/BackButton';
 import Title from './Title/Title';
@@ -29,6 +30,9 @@ const Layout = ({ children }: LayoutProps) => {
 
     return (
         <Wrapper>
+            <Head>
+                <title>{titleText}</title>
+            </Head>
             <BackButton onClick={handleBack} show={showBack} />
             <Title>{titleText}</Title>
             {children}
