@@ -12,6 +12,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "deploy": "next build && wrangler pages deploy out --project-name=nauci99ali --branch=master --commit-dirty=true",
         "start": "next start",
         "test": "node --test \"src/**/*.test.ts\"",
         "lint": "eslint src",

@@ -14,6 +14,7 @@ lives in `localStorage`.
 | ------------------- | ------------------------------------------ |
 | `npm run dev`       | Dev server on http://localhost:3000        |
 | `npm run build`     | Static export into `out/`                  |
+| `npm run deploy`    | Build, then publish to Cloudflare Pages    |
 | `npm test`          | Unit tests (`node --test`, no framework)   |
 | `npm run lint`      | ESLint (flat config, `eslint-config-next`) |
 | `npm run typecheck` | `tsc --noEmit`                             |
@@ -21,9 +22,28 @@ lives in `localStorage`.
 
 ## Deploying
 
-`npm run build` writes a fully static `out/` — drop it on any static host. There
-is no server, so a plain file server works, as long as it maps `/lista-imena`
-to `lista-imena.html` (most hosts do this by default).
+Live on Cloudflare Pages (project `nauci99ali`), served at
+[nauci99ali.com](https://nauci99ali.com) and `www.nauci99ali.com`.
+
+```
+npm run deploy
+```
+
+Needs `wrangler` on your PATH (`npm i -g wrangler`) and a Cloudflare API token
+with **Account → Cloudflare Pages → Edit**:
+
+```
+export CLOUDFLARE_API_TOKEN=...    # never commit this; .env is gitignored
+npm run deploy
+```
+
+Adding a _new_ hostname needs **Zone → DNS → Edit** as well, and the hostname
+must be registered on the Pages project — a DNS CNAME on its own is not enough
+and returns a 522. Do it under _Workers & Pages → nauci99ali → Custom domains_,
+not by hand in the DNS tab.
+
+The build is a plain static `out/`, so any static host works too, as long as it
+maps `/lista-imena` to `lista-imena.html` (Pages does this by default).
 
 ## Layout
 
